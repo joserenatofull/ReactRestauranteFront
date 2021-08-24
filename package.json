@@ -1,5 +1,5 @@
 {
-  "name": "vendas",
+  "name": "ReactEcommerce",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -32,5 +32,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "axios": "^0.21.1",
+    "react-router-dom": "^5.2.0"
   }
 }
