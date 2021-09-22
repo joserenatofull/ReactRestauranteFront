@@ -1,3 +1,4 @@
+Hospedagem no Heroku: https://react-padaria-sagrado.herokuapp.com/
 Back-end: https://github.com/joserenatofull/ReactRestauranteBack
 Baixe e configure o back-end para o uso.
 ## Available Scripts
