@@ -1,7 +1,10 @@
-.carousel-item img {
+#carousel-cc img {
     object-fit: fill;
     height: 225px;
     width: 100%;
     margin-top:1.5%;
     border-radius:10px;
+    
  }
+
+ 

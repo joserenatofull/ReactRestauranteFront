@@ -10,7 +10,7 @@ const ConteudoCentral = () => {
   const produtos = useSelector( state => state.produtos.listaCompleta );
 
   return <>
-    <main>
+    <main className="asideEconteudoC">
     <div>
 
 <div id="carouselExampleControls" className="carousel slide" data-bs-ride="carousel">
@@ -23,7 +23,7 @@ const ConteudoCentral = () => {
       //preenche a classe com active se vdd
       
       //<div className="carousel-item active">
-      return <div className={ `carousel-item ${ classeActive }` } >
+      return <div id='carousel-cc' className={ `carousel-item ${ classeActive }` } key={produto.id} >
         <img 
           src={ produto.imagem_destaque }
           className="d-block" 

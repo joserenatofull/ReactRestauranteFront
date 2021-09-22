@@ -1,0 +1,15 @@
+.br-p-preco{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 0.8em;
+    background-color: whitesmoke;
+    margin-top: 1%;
+    
+}
+
+
+@media (max-width: 999px) {
+    aside{
+        display: none;
+         }
+       
+  }

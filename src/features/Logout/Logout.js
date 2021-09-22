@@ -11,10 +11,10 @@ const Logout = () => {
 
   const logout = () => {
 
-    // Apagar o token do localStorage.
+    // remove o token da localStorage... localStore ja possui atributo removeItem
     localStorage.removeItem( 'token' );
 
-    // Apagar as informações do usuário do Redux.
+    //apaga as informações do usuário do redux
     dispatch( apagarUsuario() );
 
     // Direcionar o usuário para a tela inicial.
@@ -37,6 +37,7 @@ const Logout = () => {
 
       <button
         className='btn btn-danger'
+        // Redireciona para Home
         onClick={ () => history.push('/') } >
           Não
       </button>

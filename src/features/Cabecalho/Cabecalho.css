@@ -1,4 +1,26 @@
 
 #logo-img {
   border-radius: 5px;
+  width:35%;
+  height: 90%;
+  z-index: -100;
+  left: 0px;
+  top: 0px;
+}
+#login{
+  height: 100px;
+  width:150px;
+z-index: 10;
+position: relative;
+}
+
+#login-text{
+  color: rgb(201, 189, 189);
+  background-color:white;
+  text-align: center;
+  height:100%;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+#l-label{
+  color:grey;
 }

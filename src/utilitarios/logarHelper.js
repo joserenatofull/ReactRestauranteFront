@@ -8,7 +8,11 @@ const logarHelper = async ( usuario, senha ) => {
         // resultado = comunicação com back (uri back, usuario e senha)
     const resultado = await axios.post( 'auth', dados );
     // LS.setItem('nomedachave', token do back )
-    localStorage.setItem( 'token', resultado.data.token );
+          const token = resultado.data.token;
+
+ // Convert para String
+      localStorage.setItem( 'token', JSON.stringify(token) );
+
 
     return {
       sucesso: true,

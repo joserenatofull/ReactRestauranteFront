@@ -1,0 +1,28 @@
+#d-preco{
+    margin-top: 10%;
+    font-size: 1.8em;
+    text-align: left;
+}
+#d-categoria{
+font-weight: bold;
+font-size:1.25em;
+margin-bottom:20px;
+}
+#d-descricao{
+    margin-bottom:50px;
+    text-align: left;
+    font-size:1.75em;
+
+}
+#d-img{
+    max-width:500px;
+    max-height: 400px;
+}
+#d-h3{
+    text-align: center;
+    margin: 5%;
+}
+#d-hr{
+    background-color: black;
+    height:0.5%;
+}

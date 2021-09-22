@@ -1,5 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
+
+
 //import das action de store
 import { 
   filtrarProdutosPorCategoria, 
@@ -12,6 +15,11 @@ const MenuPrincipal = () => {
   // lista recebe o state store(lista)
   const lista = useSelector( state => state.categorias.lista );
   // dispara para o Redux ações...
+
+    //busca o states do usuario salvo no redux
+  const usuarioEstaLogado = useSelector( state => state.usuario.usuarioEstaLogado);
+  const usuarioLogado = useSelector( state => state.usuario.usuarioLogado);
+
   const dispatch = useDispatch();
 
   return <>
@@ -28,12 +36,16 @@ const MenuPrincipal = () => {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
 
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-
+            <li className="nav-item">
+                <Link id="home" className="nav-link" to='/'>Home</Link>
+              </li>
               <li className="nav-item dropdown">
 
-                <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Categorias
+
+                <a className="nav-link dropdown-toggle" href="/" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+               Cardápio
                 </a>
+  
 
                 <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
 
@@ -59,11 +71,17 @@ const MenuPrincipal = () => {
                 </ul>
                 
               </li>
+              
 
-              {/* <li className="nav-item">
-                <a className="nav-link" href="#">Acessórios</a>
-              </li> */}
-
+{/*               Cadastro de novo item apenas para adms
+ */}              {usuarioEstaLogado && usuarioLogado.tipo === '1' ?
+              <li className="nav-item">
+                <Link className="nav-link" to='cadastro-produto'>Novo Item</Link>
+              </li>
+              : null}
+               <li className="nav-item">
+                <Link className="nav-link" to='espaco'>Espaço</Link>
+              </li>
             </ul>
 
             <form 

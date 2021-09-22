@@ -6,6 +6,8 @@ import logarHelper from '../../utilitarios/logarHelper';
 
 import { salvarUsuario } from '../../store/slices/usuarioSlice';
 
+import {Botao,Campo,Rotulo,Input} from '../../styledComponents/styledComponents';
+
 const Login = () => {
 
   const dispatch = useDispatch();
@@ -20,11 +22,13 @@ const Login = () => {
     //resultado recebe função logarHelper(param,param2)
     const resultado = await logarHelper( usuario, senha );
 
+    //se resultado true
     if( resultado.sucesso ) {
       // salva no redux as informações do usuário logado
       dispatch( salvarUsuario( resultado.usuario ) );
 
       // manda o usuário para a tela inicial
+      //adiciona no  fim do historico, / foi configurado em ecommerce como Home
       history.push('/');
     } else { 
       alert( 'Verifique úsuario e senha.' );
@@ -34,33 +38,35 @@ const Login = () => {
 
   return <>
   
-    <h2>Login</h2>
+    <h2># Login:</h2><br></br>
     <form onSubmit={ e => e.preventDefault() }>
 
-      <div className='l-campo'>
-        <label htmlFor='usuario'>Usuário: </label>
-        <input 
+      <Campo>
+        <Rotulo>Usuário:</Rotulo>
+        <Input
           type='text' 
           id='usuario' 
           name='usuario'
           //setUsuario = o que foi digitado no input
           onChange={ e => setUsuario( e.target.value ) } />
-      </div>
+      </Campo>
 
-      <div className='l-campo'>
-        <label htmlFor='senha'>Senha: </label>
-        <input 
+      <Campo>
+      <Rotulo>Senha:</Rotulo>
+        <Input
           type='password' 
           id='senha' 
           name='senha'
          //setSenha = o que foi digitado no input
 
-          onChange={ e => setSenha( e.target.value ) } />
-      </div>
+          onChange={ e => setSenha( e.target.value ) }
+          fundoCinza
+          />
+      </Campo>
 
-      <button onClick={ () => logar() } >
+      <Botao onClick={ () => logar() } >
         Entrar
-      </button>
+      </Botao>
 
     </form>
 

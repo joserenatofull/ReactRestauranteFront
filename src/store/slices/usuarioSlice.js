@@ -12,17 +12,18 @@ export const usuarioSlice = createSlice({
   reducers: {
     salvarUsuario: (state, action) => {
       state.usuarioLogado = action.payload;
-      // state.usuario = o usuario
+      // state.usuarioLogado = o usuario
       state.usuarioEstaLogado = true;
       //true
 
       // return {
+        //...traz tudo que foi retornado no obj, crio novo objeto e set
       //   ...state,
       //   usuarioLogado: action.payload,
       //   usuarioEstaLogado: true
       // };
     },
-
+    //apagarUsuario recebe stado inicial
     apagarUsuario: state => state = initialState,
   },
 });

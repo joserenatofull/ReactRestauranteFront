@@ -10,7 +10,12 @@ const initialState = {
   //lista completa de produtos para realizar a filtragem
   categoriaSelecionada: NENHUMA_CATEGORIA_SELECIONADA,
   //cateroriaSeleciadona e campoPesquisar Iniciam null
-  campoPesquisar: ''
+  campoPesquisar: '',
+  preco022: true,
+  preco2250:true,
+  preco50100:true,
+  atualizarListaCompleta: true
+  //houve mudança na lista: true/false !
 };
 
 // Reducers: Redutores
@@ -61,6 +66,19 @@ export const produtosSlice = createSlice({
       //estado.CP recebe nomeAction.oquefoidigitado
     },
 
+    salvarPreco022: ( state, action ) => { 
+      state.Preco022 = action.payload;
+      //estado.CP recebe nomeAction.oquefoidigitado
+    },
+    salvarPreco2250: ( state, action ) => { 
+      state.Preco2250 = action.payload;
+      //estado.CP recebe nomeAction.oquefoidigitado
+    },
+    salvarPreco50100: ( state, action ) => { 
+      state.Preco50100 = action.payload;
+      //estado.CP recebe nomeAction.oquefoidigitado
+    },
+
     // não recebe action pq ja foi passado para salvarCampoPesquisar
     filtrarProdutosPeloCampoPesquisar: state => {
 
@@ -94,7 +112,36 @@ export const produtosSlice = createSlice({
       state.lista = produtosFiltrados;
 
     },
+    
+    filtrarProdutosPeloPreco:state => {
 
+      
+      const preco = 22;
+ 
+      const produtos = state.listaCompleta;
+
+      const produtosFiltrados = produtos.filter( produto => {
+
+        for( let i = 0; i < preco.length; i++ ) {
+
+          const preco = preco[i];
+
+
+          
+        
+          return produto.preco.includes( preco )
+          
+        }
+
+      } );
+
+      state.lista = produtosFiltrados;
+
+    },
+
+    atualizarListaCompletaProdutos: state => {
+      state.atualizarListaCompleta = !state.atualizarListaCompleta;
+    }
   },
 });
 
@@ -106,7 +153,9 @@ export const {
   salvarProdutos, 
   filtrarProdutosPorCategoria,
   salvarCampoPesquisar,
-  filtrarProdutosPeloCampoPesquisar
+  filtrarProdutosPeloCampoPesquisar,
+  atualizarListaCompletaProdutos,
+  filtrarProdutosPeloPreco
 } = produtosSlice.actions;
 
 

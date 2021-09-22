@@ -1,0 +1,18 @@
+footer {
+    background-color: rgba(199, 161, 90, 0.829);
+    color: white;
+    font-size: xx-large;
+    text-align: center;
+    display: block;
+    bottom:0;
+    width:100%;
+    margin-top: 20%;
+}
+#text-rodape{
+    font-family: 'Times New Roman', Times, serif;
+}
+
+@media (max-width: 800px) {
+   footer {margin-top: 40%;}
+
+}

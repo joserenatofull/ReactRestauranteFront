@@ -7,7 +7,8 @@ import MenuPrincipal from './MenuPrincipal/MenuPrincipal';
 import './Cabecalho.css';
 
 const Cabecalho = () => {
-
+  //busca no redux o state.usuario.usuarioEstaLogado
+  // busca no redux tipo do usuario logado
   const usuarioEstaLogado = useSelector( state => state.usuario.usuarioEstaLogado );
   const usuarioLogado = useSelector( state => state.usuario.usuarioLogado );
 
@@ -29,29 +30,29 @@ const Cabecalho = () => {
           <div className="col-12 col-sm-8 col-md-10">
             <Link to='/'>
               <img id='logo-img'
-                src='/imagens/sep.jpg' 
+                src='/imagens/logo.jpg' 
                 alt='Logo' 
-                title='Logo do Infnet.' />
+                title='Logo' />
             </Link>
           </div>
 
-          <div className="col-12 col-sm-4 col-md-2">
-            
-            { usuarioEstaLogado ?
-              <div>
+          <div id='login' className="col-12 col-sm-4 col-md-2">
+{/*             usuario logado?
+ */}            { usuarioEstaLogado ?
+              <div>    
                 Seja bem-vindo, <span style={style.span}>{ usuarioLogado.nome }</span>.
               </div>
               : null }
 
             <div>
               { usuarioEstaLogado ?
-                <Link to='logout'>
-                  <i className="far fa-user"></i> Logout
+                <Link  to='logout'>
+                  |<i className="far fa-user"></i>| Logout
                 </Link>
-                :
-                <Link to='login'>
-                  <i className="fas fa-user"></i> Login
-                </Link>
+                :<div id='login-text'>
+                <Link to='login' name='login' id='login'>
+                  <i className="fas fa-user text-secondary"></i>
+                </Link> |<label id='l-label'>Login</label>|</div>
               }
             </div>
           </div>
