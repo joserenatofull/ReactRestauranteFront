@@ -6,7 +6,7 @@ Baixe e configure o back-end para o uso.
 
 `Front-end de uma Aplicação para Padaria/Restaurante.`
 
-![image](https://user-images.githubusercontent.com/78097492/135900616-88780f35-ad2b-4924-834c-c354c5bd9dac.png)
+![image](https://user-images.githubusercontent.com/78097492/135900844-e1f6e1b1-5384-49ef-884b-8880b91bb85d.png)
 ![image](https://user-images.githubusercontent.com/78097492/135899784-949dbc3a-ecc8-4677-958c-810fffe9e4f4.png)
 ![image](https://user-images.githubusercontent.com/78097492/135899861-557a7733-ddde-4de0-894e-cd5d3fbecbd0.png)
 ![image](https://user-images.githubusercontent.com/78097492/135899928-b1275a8a-0d91-4ad6-bf99-c3d021601402.png)
